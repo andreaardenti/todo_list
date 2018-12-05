@@ -1,0 +1,21 @@
+{
+  "name": "todolistandreaardenti",
+  "version": "1.0.0",
+  "description": "a simply todo list",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "todo",
+    "list",
+    "manager"
+  ],
+  "author": "andrea ardenti <andrea.ardenti@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mocha": "^5.2.0",
+    "node": "^11.3.0"
+  }
+}

@@ -2,11 +2,14 @@ let todos = [];
 let COUNTER = 1;
 let users = ['andrea', 'piero', 'giovanni', 'caligola'];
 
-//console.log(users[0]);
-
 //mostra tutti i todo's
 exports.showToDo = function() {
     return todos;
+}
+
+//mostra tutti gli users
+exports.showAllUsers = function() {
+    return users;
 }
 
 //resetta tutti i todo's e il contatore
@@ -41,11 +44,11 @@ exports.deleteToDo = function(id) {
 }
 
 //cambia lo stato di un todo
-exports.changeToDoState = function(id) {
+exports.changeToDoState = function(id, state) {
     let filteredToDoState = [];
     for(let i=0; i<todos.length; i++) {
         if(todos[i].id === id) {
-            todos[i].completed = true;
+            todos[i].completed = state;
             filteredToDoState.push(todos);
         }
     } return filteredToDoState;
@@ -71,8 +74,8 @@ exports.findToDoByState = function(param) {
     } return filteredToDoByState;
 }
 
-//this.addToDo('SPESA', 'pasta, frutta, verdura', 'caligola');
-//this.addToDo('MECCANICO', 'olio, punterie, filtro', 'andrea');
+this.addToDo('SPESA', 'pasta, frutta, verdura', 'caligola');
+this.addToDo('MECCANICO', 'olio, punterie, filtro', 'andrea');
 //this.addToDo('CINEMA', 'regista, attori, titoli di coda', 'piero');
 
 //console.log(todos);
@@ -81,7 +84,10 @@ exports.findToDoByState = function(param) {
 //console.log(this.deleteToDo(1));
 //console.log(this.showToDo());
 
-//this.changeToDoState(1);
+//this.changeToDoState(1, true);
+//console.log(this.showToDo());
+
+//this.changeToDoState(1, false);
 //console.log(this.showToDo());
 
 //console.log(this.findToDoByName('piero'));
@@ -89,3 +95,5 @@ exports.findToDoByState = function(param) {
 
 //console.log(this.findToDoByState(true));
 //console.log(this.showToDo());
+
+//console.log(this.showAllUsers());

@@ -38,20 +38,20 @@ exports.addToDo = function(title, description, name) {
 exports.deleteToDo = function(id) {
     for (var i=0; i<todos.length; i++) {
         if (todos[i].id === id) {
-            return todos.splice(i ,1);
+            todos.splice(i ,1);
+            return todos[i];
         }
     }
 }
 
 //cambia lo stato di un todo
 exports.changeToDoState = function(id, state) {
-    let filteredToDoState = [];
     for(let i=0; i<todos.length; i++) {
         if(todos[i].id === id) {
             todos[i].completed = state;
-            filteredToDoState.push(todos);
+            return todos[i];
         }
-    } return filteredToDoState;
+    }
 }
 
 //mostrare la lista dei todo in base all'utente
@@ -74,9 +74,16 @@ exports.findToDoByState = function(param) {
     } return filteredToDoByState;
 }
 
+//ritorno uno specifico user
+exports.getUser = function(name) {
+    if (users.includes(name)) {
+        return name
+    } return "User not present in DataBase, sorry"
+}
+
 this.addToDo('SPESA', 'pasta, frutta, verdura', 'caligola');
 this.addToDo('MECCANICO', 'olio, punterie, filtro', 'andrea');
-//this.addToDo('CINEMA', 'regista, attori, titoli di coda', 'piero');
+this.addToDo('CINEMA', 'regista, attori, titoli di coda', 'piero');
 
 //console.log(todos);
 //console.log(this.showToDo());
@@ -84,16 +91,15 @@ this.addToDo('MECCANICO', 'olio, punterie, filtro', 'andrea');
 //console.log(this.deleteToDo(1));
 //console.log(this.showToDo());
 
-//this.changeToDoState(1, true);
-//console.log(this.showToDo());
-
-//this.changeToDoState(1, false);
-//console.log(this.showToDo());
+//console.log(this.changeToDoState(1, true));
 
 //console.log(this.findToDoByName('piero'));
-//console.log(this.showToDo());
 
 //console.log(this.findToDoByState(true));
-//console.log(this.showToDo());
 
 //console.log(this.showAllUsers());
+
+//console.log(this.getUser('andreas'));
+//console.log(this.getUser('andrea'));
+
+this.resetToDo();

@@ -1,6 +1,6 @@
 {
   "name": "todolistandreaardenti",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "a simply todo list",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,14 @@
     "express": "^4.16.4",
     "mocha": "^5.2.0",
     "node": "^11.3.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreaardenti/todo_list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andreaardenti/todo_list/issues"
+  },
+  "homepage": "https://github.com/andreaardenti/todo_list#readme"
 }
